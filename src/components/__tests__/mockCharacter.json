@@ -1,0 +1,17 @@
+{
+    "id": 232,
+    "name": "Morty Smith",
+    "status": "Alive",
+    "species": "Human",
+    "type": "",
+    "gender": "Male",
+    "origin": {
+        "name": "Earth (Evil Rick's Target Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/34"
+    },
+    "locationName": "Earth (Evil Rick's Target Dimension)",
+    "image": "https://rickandmortyapi.com/api/character/avatar/232.jpeg",
+    "firstEpisodeName": "Close Rick-counters of the Rick Kind",
+    "url": "https://rickandmortyapi.com/api/character/232",
+    "created": "2017-12-30T16:29:27.863Z"
+}
