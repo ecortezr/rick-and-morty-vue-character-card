@@ -66,18 +66,18 @@ type Character = {
 const characterData = ref<Character>();
 
 characterData.value = {
-  id:	232,
-  name:	'Morty Smith',
-  status:	'Alive',
-  species:	'Human',
-  type:	'',
-  gender:	Male,
-  origin: 'Earth (Evil Rick's Target Dimension)'
-  locationName:	'Earth (Evil Rick's Target Dimension)',
-  image:	'https://rickandmortyapi.com/api/character/avatar/232.jpeg',
-  firstEpisodeName:	'Close Rick-counters of the Rick Kind',
-  url:	'https://rickandmortyapi.com/api/character/232',
-  created:	new Date(2017-12-30T16:29:27.863Z)
+  id: 232,
+  name: 'Morty Smith',
+  status: 'Alive',
+  species: 'Human',
+  type: '',
+  gender: 'Male',
+  origin: `Earth (Evil Rick's Target Dimension)`
+  locationName: `Earth (Evil Rick's Target Dimension)`,
+  image: 'https://rickandmortyapi.com/api/character/avatar/232.jpeg',
+  firstEpisodeName: 'Close Rick-counters of the Rick Kind',
+  url: 'https://rickandmortyapi.com/api/character/232',
+  created: new Date(2017-12-30T16:29:27.863Z)
 }
 
 </script>
