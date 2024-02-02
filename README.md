@@ -38,7 +38,7 @@ Import the component locally or define it globally and include the css file:
   <CharacterCard
       v-if="characterData"
       :character-data="characterData"
-      max-with="326px"
+      max-wdith="326px"
       bg-color="#FFFFFF"
       :is-favorite="true"
       />
