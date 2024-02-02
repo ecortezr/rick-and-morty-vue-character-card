@@ -38,7 +38,8 @@ Import the component locally or define it globally and include the css file:
   <CharacterCard
       v-if="characterData"
       :character-data="characterData"
-      :max-with="326px"
+      max-with="326px"
+      bg-color="#FFFFFF"
       :is-favorite="true"
       />
 </template>
@@ -72,12 +73,12 @@ characterData.value = {
   species: 'Human',
   type: '',
   gender: 'Male',
-  origin: `Earth (Evil Rick's Target Dimension)`
+  origin: `Earth (Evil Rick's Target Dimension)`,
   locationName: `Earth (Evil Rick's Target Dimension)`,
   image: 'https://rickandmortyapi.com/api/character/avatar/232.jpeg',
   firstEpisodeName: 'Close Rick-counters of the Rick Kind',
   url: 'https://rickandmortyapi.com/api/character/232',
-  created: new Date(2017-12-30T16:29:27.863Z)
+  created: new Date('2017-12-30T16:29:27.863Z')
 }
 
 </script>
@@ -87,6 +88,7 @@ characterData.value = {
 
 | Name       | Type               | Default | Description                        |
 | ---------- | ------------------ | ------- | ---------------------------------- |
-| `is-favorite` | `boolean`          | false   | (Optional) Turn on the favorite icon |
-| `max-width`    | `string`           | '' | (Optional) Maximum width of the card   |
 | `character-data`    | `Character` |         | (Required) Character data to render in the card                     |
+| `max-width`    | `string`           | '' | (Optional) Maximum width of the card   |
+| `bg-color`    | `string`           | 'inherit' | (Optional) Content card background color    |
+| `is-favorite` | `boolean`          | false   | (Optional) Turn on the favorite icon |

@@ -14,6 +14,7 @@ describe('CharacterCard', () => {
   const propsFull = {
     ...props,
     isFavorite: true,
+    bgColor: '#FFF',
     maxWidth: '326px'
   };
 
@@ -32,29 +33,51 @@ describe('CharacterCard', () => {
     expect(wrapper.props()).toEqual(propsFull);
   });
 
+  it('render with properly style', () => {
+    const wrapperCssProps = {
+      display: 'flex',
+      position: 'relative',
+      'min-width': '326px',
+      'max-height': '140px',
+      margin: '5px'
+    };
+    type Keys = keyof typeof wrapperCssProps;
+
+    const computedStyle = getComputedStyle(wrapper.element);
+
+    expect(wrapper.classes()).toContain('card');
+
+    Object.keys(wrapperCssProps).forEach((key: string) => {
+      expect(computedStyle[key as keyof CSSStyleDeclaration])
+        .toBe(wrapperCssProps[key as Keys]);
+    });
+  });
+
+  it('render with properly style when set optional props', () => {
+    const wrapper = mount(CharacterCard, { props: propsFull });
+    const wrapperCssProps = {
+      display: 'flex',
+      position: 'relative',
+      'min-width': '326px',
+      'max-height': '140px',
+      margin: '5px',
+      'max-width': '326px'
+    };
+    type Keys = keyof typeof wrapperCssProps;
+
+    const computedStyle = getComputedStyle(wrapper.element);
+
+    expect(wrapper.classes()).toContain('card');
+
+    Object.keys(wrapperCssProps).forEach((key: string) => {
+      expect(computedStyle[key as keyof CSSStyleDeclaration])
+        .toBe(wrapperCssProps[key as Keys]);
+    });
+  });
+
   describe('CharacterCard Elements', () => {
 
-    it('render with properly style', () => {
-      const wrapperCssProps = {
-        display: 'flex',
-        position: 'relative',
-        'min-width': '326px',
-        'max-height': '140px',
-        margin: '5px'
-      };
-      type Keys = keyof typeof wrapperCssProps;
-
-      const computedStyle = getComputedStyle(wrapper.element);
-
-      expect(wrapper.classes()).toContain('card');
-
-      Object.keys(wrapperCssProps).forEach((key: string) => {
-        expect(computedStyle[key as keyof CSSStyleDeclaration])
-          .toBe(wrapperCssProps[key as Keys]);
-      });
-    });
-
-    it('render with properly content style', () => {
+    it('render content with properly style', () => {
       const contentElem = wrapper.find('#card-content');
       const contentCssProps = {
         flex: '3 1 0%',
@@ -66,7 +89,35 @@ describe('CharacterCard', () => {
         'border-top-right-radius': '10px',
         'border-bottom-right-radius': '10px',
         border: '1px solid #e0e0e0',
+        'font-size': '10px'
+      };
+      type Keys = keyof typeof contentCssProps;
+
+      const computedStyle = getComputedStyle(contentElem.element);
+
+      expect(contentElem.classes()).toContain('card__content');
+
+      Object.keys(contentCssProps).forEach((key: string) => {
+        expect(computedStyle[key as keyof CSSStyleDeclaration])
+          .toBe(contentCssProps[key as Keys]);
+      });
+    });
+
+    it('render content with properly style when set optional props', () => {
+    const wrapper = mount(CharacterCard, { props: propsFull });
+    const contentElem = wrapper.find('#card-content');
+      const contentCssProps = {
+        flex: '3 1 0%',
+        position: 'relative',
+        padding: '0.5rem',
+        display: 'flex',
+        'flex-direction': 'column',
+        color: 'rgb(0, 0, 0)',
+        'border-top-right-radius': '10px',
+        'border-bottom-right-radius': '10px',
+        border: '1px solid #e0e0e0',
         'font-size': '10px',
+        'background-color': 'rgb(255, 255, 255)'
       };
       type Keys = keyof typeof contentCssProps;
 

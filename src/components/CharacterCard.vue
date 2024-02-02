@@ -7,12 +7,13 @@ import { computed } from 'vue';
 const props = withDefaults(defineProps<{
     characterData: ICharacter,
     maxWidth?: string,
+    bgColor?: string,
     isFavorite?: boolean
 }>(), {
     maxWidth: () => ''
 })
 
-const { characterData, maxWidth } = props;
+const { characterData, maxWidth, bgColor } = props;
 const {
     firstEpisodeName,
     image,
@@ -30,9 +31,13 @@ const classObject = computed(() => ({
 }))
 
 const maxValueProp = computed(() => (maxWidth.length === 0)
-    ? { 'max-width': maxWidth }
-    : {}
-)
+    ? {}
+    : { 'max-width': maxWidth }
+);
+
+const bgColorProp = computed(() => ({
+    'background-color': bgColor
+}));
 </script>
 
 <template>
@@ -44,7 +49,11 @@ const maxValueProp = computed(() => (maxWidth.length === 0)
             <FavoriteActiveIcon id="favorite-icon-on" v-if="isFavorite" />
             <FavoriteIcon id="favorite-icon-off" v-else />
         </div>
-        <div id="card-content" class="card__content">
+        <div
+            id="card-content"
+            class="card__content"
+            :style="bgColorProp"
+            >
             <div class="card-content__section" data-test="card-section">
                 <span id="card-status-species" class="card__status-species">
                     <span id="card-status" class="card__status" :class="classObject"></span>
