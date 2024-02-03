@@ -1,6 +1,6 @@
 {
   "name": "rick-and-morty-vue-character-card",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "type": "module",
   "description": "A component library to share CharacterCard among projects",

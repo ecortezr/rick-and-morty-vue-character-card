@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { ICharacter } from '@/types';
 import FavoriteIcon from './icons/IconFavorite.vue'
-import FavoriteActiveIcon from './icons/IconFavoriteActive.vue'
 import { computed } from 'vue';
 
 const props = withDefaults(defineProps<{
@@ -46,8 +45,7 @@ const bgColorProp = computed(() => ({
         <div id="favorite-icon-wrapper" class="card__favorite">
         </div>
         <div id="favorite-icon-container" class="card__star-container">
-            <FavoriteActiveIcon id="favorite-icon-on" v-if="isFavorite" />
-            <FavoriteIcon id="favorite-icon-off" v-else />
+            <FavoriteIcon id="favorite-icon-off" :is-favorite="isFavorite"/>
         </div>
         <div
             id="card-content"
