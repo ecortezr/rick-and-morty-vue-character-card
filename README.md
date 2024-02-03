@@ -136,7 +136,7 @@ Import the component locally or define it globally and include the css file:
 </template>
 
 <script setup lang="ts">
-import { CardInfo } from "rick-and-morty-vue-character-card";
+import { IconFavorite } from "rick-and-morty-vue-character-card";
 import "rick-and-morty-vue-character-card/dist/style.css";
 
 // code...
