@@ -7,7 +7,6 @@ const props = defineProps<{
   footer?: string,
   showIcon?: boolean
 }>();
-console.log(props);
 </script>
 
 <template>
