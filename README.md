@@ -38,7 +38,6 @@ Import the component locally or define it globally and include the css file:
 ```vue
 <template>
   <CharacterCard
-      v-if="characterData"
       :character-data="characterData"
       max-wdith="326px"
       bg-color="#FFFFFF"
