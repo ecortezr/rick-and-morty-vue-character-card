@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IconInfoCircle from './icons/IconInfoCircle.vue';
 
-const props = defineProps<{
+defineProps<{
   label: string,
   value: string,
   footer?: string,

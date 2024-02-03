@@ -29,7 +29,9 @@ cd my-vue-app
 npm install ../rick-and-morty-vue-character-card
 ```
 
-## ⚙️ Usage
+## ⚡ Usage
+
+### ⚙️ CharacterCard
 
 Import the component locally or define it globally and include the css file:
 
@@ -84,11 +86,65 @@ characterData.value = {
 </script>
 ```
 
-## 📃 Props
+### 📃 Props
 
 | Name       | Type               | Default | Description                        |
 | ---------- | ------------------ | ------- | ---------------------------------- |
 | `character-data`    | `Character` |         | (Required) Character data to render in the card                     |
 | `max-width`    | `string`           | '' | (Optional) Maximum width of the card   |
 | `bg-color`    | `string`           | 'inherit' | (Optional) Content card background color    |
-| `is-favorite` | `boolean`          | false   | (Optional) Turn on the favorite icon |
+| `is-favorite` | `boolean`          | false   | (Optional) Turn on/off the favorite icon |
+
+### ⚙️ CardInfo
+
+Import the component locally or define it globally and include the css file:
+
+```vue
+<template>
+  <CardInfo
+    :label="labelContent"
+    :value="valueContent"
+    :footer="footerContent"
+    :show-icon="false"
+    />
+</template>
+
+<script setup lang="ts">
+import { CardInfo } from "rick-and-morty-vue-character-card";
+import "rick-and-morty-vue-character-card/dist/style.css";
+
+// code...
+</script>
+```
+
+### 📃 Props
+
+| Name       | Type               | Default | Description                        |
+| ---------- | ------------------ | ------- | ---------------------------------- |
+| `label`    | `string`  |         | (Required) Label to show                     |
+| `value`    | `string` |         | (Required) Content to show                   |
+| `footer`    | `string`           |  | (Optional) Footer section   |
+| `show-icon` | `boolean`          | true   | (Optional) Show/hide the icon |
+
+### ⚙️ IconFavorite
+
+Import the component locally or define it globally and include the css file:
+
+```vue
+<template>
+  <IconFavorite :is-favorite="isFavorite" />
+</template>
+
+<script setup lang="ts">
+import { CardInfo } from "rick-and-morty-vue-character-card";
+import "rick-and-morty-vue-character-card/dist/style.css";
+
+// code...
+</script>
+```
+
+### 📃 Props
+
+| Name       | Type               | Default | Description                        |
+| ---------- | ------------------ | ------- | ---------------------------------- |
+| `is-favorite` | `boolean`          | false   | (Optional) Turn on/off the favorite icon |
